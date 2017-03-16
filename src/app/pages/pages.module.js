@@ -16,6 +16,12 @@
     'BlurAdmin.pages.charts',
     'BlurAdmin.pages.maps',
     'BlurAdmin.pages.profile',
+    'BlurAdmin.pages.spokes',
+    'BlurAdmin.pages.users',
+    'BlurAdmin.pages.fluid_topics',
+    'BlurAdmin.pages.bulk_upload',
+    'BlurAdmin.pages.my_task',
+    'BlurAdmin.pages.search'
   ])
       .config(routeConfig);
 

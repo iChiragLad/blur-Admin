@@ -14,9 +14,29 @@
         .state('spokes', {
           url: '/spokes',
           templateUrl: 'app/pages/spokes/spokes.html',
+          abstract: true,
           title: 'Spokes',
           sidebarMeta: {
-            order: 900,
+            icon: 'ion-link',
+            order: 50
+          },
+        })
+        .state('spokes.lms', {
+          url: '/lms',
+          templateUrl: 'app/pages/spokes/LMS/LMS.html',
+          controller: 'LMSPageCtrl',
+          title: 'LMS Console',
+          sidebarMeta: {
+            order: 51,
+          },
+        })
+        .state('spokes.cc', {
+          url: '/cc',
+          templateUrl: 'app/pages/spokes/ClientConnect/ClientConnect.html',
+          controller: 'ClientConnectPageCtrl',
+          title: 'CC Console',
+          sidebarMeta: {
+            order: 52,
           },
         });
   }
