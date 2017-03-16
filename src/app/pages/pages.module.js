@@ -21,13 +21,14 @@
     'BlurAdmin.pages.fluid_topics',
     'BlurAdmin.pages.bulk_upload',
     'BlurAdmin.pages.my_task',
-    'BlurAdmin.pages.search'
+    'BlurAdmin.pages.search',
+    'BlurAdmin.pages.administration'
   ])
       .config(routeConfig);
 
   /** @ngInject */
   function routeConfig($urlRouterProvider, baSidebarServiceProvider) {
-    $urlRouterProvider.otherwise('/dashboard');
+    $urlRouterProvider.otherwise('/search');
 
     baSidebarServiceProvider.addStaticItem({
       title: 'Pages',
