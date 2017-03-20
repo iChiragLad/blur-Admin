@@ -1,23 +1,22 @@
 <style>
-#custom-search-input {
-        margin:0;
+    #custom-search-input {
+        margin: 0;
         margin-top: 10px;
         padding: 0;
     }
- 
+    
     #custom-search-input .search-query {
         padding-right: 3px;
         padding-right: 4px \9;
         padding-left: 3px;
         padding-left: 4px \9;
         /* IE7-8 doesn't have border-radius, so don't indent the padding */
- 
         margin-bottom: 0;
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
         border-radius: 3px;
     }
- 
+    
     #custom-search-input button {
         border: 0;
         background: none;
@@ -31,25 +30,34 @@
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
         border-radius: 3px;
-        color:#D9230F;
+        color: #D9230F;
     }
- 
-    .search-query:focus + button {
-        z-index: 3;   
+    
+    .search-query:focus+button {
+        z-index: 3;
     }
 </style>
 
 <div class="container">
-    <div class="row">
+    <div class="row" ng-show="searchBox">
         <h1 style="text-align:center; margin-top: 100px; font-size: 50px; font-family: Georgia, 'Times New Roman', Times, serif">Allscripts Central <span style="font-size: 18px; color:limegreen; ">Search</span></h1><br><br>
         <div id="custom-search-input">
             <div class="input-group col-md-12">
-                <input style="height: 50px; font-size: 22px;" type="text" class="search-query form-control" placeholder="Search"/>
+                <input style="height: 50px; font-size: 22px;" type="text" class="search-query form-control" placeholder="Search" />
                 <span class="input-group-btn">
-                    <button class="btn btn-danger" type="button">
+                    <button ng-click="SearchCentral()" class="btn btn-danger" type="button">
                         <span class=" glyphicon glyphicon-search"></span>
-                    </button>
+                </button>
                 </span>
+            </div>
+        </div>
+    </div>
+    <div ng-show="searchResult">
+        <div class="row">
+            <div class="col-md-12">
+                <div ba-panel ba-panel-title="Central Search Results" ba-panel-class="with-scroll">
+                    <div include-with-scope="app/pages/search/Widgets/table.html"></div>
+                </div>
             </div>
         </div>
     </div>
