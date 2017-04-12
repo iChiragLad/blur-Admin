@@ -1,0 +1,28 @@
+<div class="horizontal-scroll">
+    <table class="table" st-table="topOrgData">
+        <tbody>
+            <tr ng-repeat="item in topOrgData">
+                <td style="text-align: left;">
+                    <div class="row">
+                        <div class="col-md-2" style="float: left;">
+                            <p style="font-family: 'Segoe UI'; font-size: 15px; font-weight: bold;">#{{$index + 1}}</p>
+                        </div>
+                        <div class="col-md-8" style="float: left;">
+                            <a style="font-family: 'Segoe UI'; font-size: 16px; font-weight: bold;" href="#">{{item.Account}}</a>
+                        </div>
+                        <div class="col-md-2" style="float: left;">
+                            <span class="badge">{{item.Views}}</span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5" class="text-center">
+                    <div st-pagination="" st-items-by-page="5" st-displayed-pages="4"></div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

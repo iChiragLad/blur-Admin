@@ -1,0 +1,18 @@
+<div class="horizontal-scroll">
+  <table class="table" st-table="rowColl" st-safe-src="data">
+    <tbody>
+      <tr ng-repeat="item in rowColl">
+        <td style="text-align: left;">
+          <div include-with-scope="app/pages/search/Widgets/orgData1.html"></div>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="5" class="text-center">
+          <div st-pagination="" st-items-by-page="5" st-displayed-pages="5"></div>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

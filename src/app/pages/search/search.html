@@ -30,7 +30,7 @@
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
         border-radius: 3px;
-        color: #D9230F;
+        color: cadetblue;
     }
     
     .search-query:focus+button {
@@ -39,11 +39,23 @@
 </style>
 
 <div class="container">
-    <div class="row" ng-show="searchBox">
-        <h1 style="text-align:center; margin-top: 100px; font-size: 50px; font-family: Georgia, 'Times New Roman', Times, serif">Allscripts Central <span style="font-size: 18px; color:limegreen; ">Search</span></h1><br><br>
-        <div id="custom-search-input">
+    <div class="row" style="margin-top: 100px;" ng-show="searchBox">
+        <div class="row">
+            <div class="col-xs-12">
+                <div style="text-align: center">
+                    <img alt="Allscripts" src="../../../assets/img/homePageMainLogo.png" />
+                </div>
+            </div>
+            <div class="col-xs-12" style="margin-top: .6em;">
+                <div style="text-align: center">
+                    <span style="margin-left: 16em; font-size: 15px; color: #006666; font-style: italic; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Central Search</span>
+                </div>
+            </div>
+        </div>
+        <div id="custom-search-input" style="margin-top: 2em;">
             <div class="input-group col-md-12">
-                <input style="height: 50px; font-size: 22px;" type="text" class="search-query form-control" placeholder="Search" />
+                <input ng-model="queryText" style="font-family: 'Segoe UI', sans-serif; height: 45px; font-size: 22px;" type="text" class="search-query form-control" placeholder="Search for..."
+                />
                 <span class="input-group-btn">
                     <button ng-click="SearchCentral()" class="btn btn-danger" type="button">
                         <span class=" glyphicon glyphicon-search"></span>
@@ -53,11 +65,13 @@
         </div>
     </div>
     <div ng-show="searchResult">
+        <div include-with-scope="app/pages/search/Widgets/resultLandingPage.html"></div>
+    </div>
+    <div ng-show="loader">
         <div class="row">
             <div class="col-md-12">
-                <div ba-panel ba-panel-title="Central Search Results" ba-panel-class="with-scroll">
-                    <div include-with-scope="app/pages/search/Widgets/table.html"></div>
-                </div>
+                <img alt="loading..." style="display: block; margin-left: auto; margin-right: auto; margin-top: 100px;" src="../../../assets\img\hourglass.gif"
+                />
             </div>
         </div>
     </div>
